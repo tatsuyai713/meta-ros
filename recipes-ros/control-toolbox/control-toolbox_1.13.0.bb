@@ -7,8 +7,8 @@ DEPENDS = "rosconsole tf roscpp angles message-generation dynamic-reconfigure li
     realtime-tools message-filters"
 
 SRC_URI = "https://github.com/ros-controls/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "28f8bc6536401456b207e20b4de2e8b3"
-SRC_URI[sha256sum] = "0fe2964d156f8bc1af89cca66007d46ef9c71cc2c4d34dfb0c7070c72b7141f6"
+SRC_URI[md5sum] = "99f631fd1d06403d780ae706cf5cae05"
+SRC_URI[sha256sum] = "25dd346f639f048d0ce03ae27caa38966a612d9cc83a46e0aa3698cd3bbd4750"
 
 S = "${WORKDIR}/${ROS_SP}"
 
