@@ -1,0 +1,98 @@
+- defaults:
+    name: ROS_defaults
+    project-type: freestyle
+    defaults: global
+    disabled: false
+    concurrent: true
+    node: 'docker || dockernew'
+
+    logrotate:
+      numToKeep: 10
+
+    properties:
+      - authorization:
+         anonymous:
+         - job-discover
+         - job-read
+         - job-build
+         - job-cancel
+         - run-update
+    wrappers:
+      - timestamps
+      - workspace-cleanup
+      - ansicolor:
+          colormap: xterm
+
+
+- builder:
+    name: yocto-docker-builder-meta-ros
+    builders:
+        - shell:
+            !include-raw yocto-docker-meta-ros.sh
+
+- builder:
+    name: yocto-docker-builder-meta-ros-exp
+    builders:
+        - shell:
+            !include-raw yocto-docker-meta-ros-exp.sh
+
+- publisher:
+    name: publisher-yocto
+    publishers:
+      - post-tasks:
+          - escalate-status: false
+            run-if-job-successful: false
+            escalate-status: false
+            script: |
+              #!/bin/bash
+
+              echo
+              echo "#################################"
+              echo "########### cleanup #############"
+              echo "#################################"
+              echo
+              echo "Deleting tmp contents"
+              rm -rf meta-ros-build/tmp/*
+              echo "Unmounting ramdisk"
+              sudo umount meta-ros-build/tmp
+
+- publisher:
+    name: publisher-nightly
+    publishers:
+      - archive:
+          artifacts: 'meta-ros-build/deploy/images/*/*image*.tar.bz2,meta-ros-build/deploy/sdk/*'
+          latest-only: true
+          allow-empty: false
+      - email:
+          recipients: lukas.bulwahn@oss.bmw-carit.de
+
+- job-template:
+    name: ROS_{name}_nightly
+    defaults: 'ROS_defaults'
+    description: "meta-ros nightly build.\nContact: Lukas Bulwahn"
+    builders:
+        - yocto-docker-builder-meta-ros
+    triggers:
+        - timed: 'H 19 * * *'
+    publishers:
+      - publisher-yocto
+      - publisher-nightly
+
+- job-template:
+    name: ROS_{name}_nightly-experimental
+    defaults: 'ROS_defaults'
+    description: "meta-ros nightly build (experimental).\nContact: Lukas Bulwahn"
+    builders:
+      - yocto-docker-builder-meta-ros-exp
+    triggers:
+      - timed: 'H 03 * * *'
+    publishers:
+      - publisher-yocto
+      - email:
+          recipients: lukas.bulwahn@oss.bmw-carit.de
+
+- project:
+    name: meta-ros
+    jobs:
+      - ROS_{name}_nightly
+      - ROS_{name}_nightly-experimental
