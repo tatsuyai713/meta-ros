@@ -1,0 +1,26 @@
+Updating the docker image on the registry (used by the build jobs):
+
+1. Build the image:
+	docker build -t docker.bmw-carit.de/yocto-build .
+
+2. Push to the registry:
+	docker push docker.bmw-carit.de/yocto-build
+
+
+Running a build:
+
+1. Create your fig.yml from the template.
+        cp fig.yml.template fig.yml
+
+2. Edit the fig.yml. Make sure that all directories
+   you are referring to exist on your host system.
+
+3. Build the container.
+        fig build
+
+4. Add the neccessary credentials to ~/.netrc on your host system.
+   A preset of technical users is given in .netrc.preset.
+
+5. Run the build command on the image called build.
+        fig run build "bitbake <target>"
+
