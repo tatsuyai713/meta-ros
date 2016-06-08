@@ -7,8 +7,8 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=16;endline=16;md5=d566ef916e9de
 DEPENDS = "curl rosconsole roslib"
 
 SRC_URI = "https://github.com/ros/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "1dffd39475ebe70b14390889d3b4b3c4"
-SRC_URI[sha256sum] = "5f00e95c5a086973efa25e26da9cee8f4b10b446fbb5eb6694b32b2201539866"
+SRC_URI[md5sum] = "4c9136d06bf9628b1d666cc88edd4c60"
+SRC_URI[sha256sum] = "b12197914f2d065581900726dafcf94d3eabaa5a646766c5a1386f6aee3c7c59"
 
 S = "${WORKDIR}/${ROS_SP}"
 
