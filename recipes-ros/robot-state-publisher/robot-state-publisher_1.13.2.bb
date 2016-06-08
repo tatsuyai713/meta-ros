@@ -6,8 +6,8 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=18;endline=18;md5=d566ef916e9de
 DEPENDS = "cmake-modules libeigen kdl-parser orocos-kdl rosconsole roscpp rostime sensor-msgs tf tf2-ros tf2-kdl"
 
 SRC_URI = "https://github.com/ros/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "f10d326400fd97f349a19a330c65aa3a"
-SRC_URI[sha256sum] = "33b7606f0ea913e22887fe30521c94c1167f56197c03ce2985fc778876ea2141"
+SRC_URI[md5sum] = "4e27ed1998cb51612fb13c7db1717fbc"
+SRC_URI[sha256sum] = "b4bc99d4ba01ca59dffd81aac99d3420a1035f960fdf5eac17d1aa96790ce28d"
 
 S = "${WORKDIR}/${ROS_SP}"
 
