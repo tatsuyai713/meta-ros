@@ -57,7 +57,6 @@ RUN wget -q -O /usr/local/bin/gosu https://dl.bmw-carit.de/mirror/gosu && chmod 
 
 # prepare skel dir for new user
 COPY gitconfig /etc/skel/.gitconfig
-COPY .netrc.preset /etc/skel/.netrc
 RUN echo "source /data/build-env.sh" > /etc/skel/.bashrc \
 	&& chmod +x /etc/skel/.bashrc
 
