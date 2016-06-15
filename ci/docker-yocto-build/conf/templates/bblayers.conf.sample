@@ -1,0 +1,13 @@
+# This variable should point to the location where all the
+# layers are located.
+LAYERS_DIR := "${@os.path.abspath('##OEROOT##/..')}/src"
+
+# Set the machine we are building for - this value is used
+# to add the correct machine specific layers into BBLAYERS.
+MACHINE ?= "qemux86"
+
+# Include global layers
+include /data/conf/site-layers.conf
+
+# You can append additional layers like this:
+# BBLAYERS += "${LAYERS_DIR}/my_layer"

@@ -1,0 +1,8 @@
+[color]
+	ui = true
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	autocrlf = false
+	safecrlf = false
