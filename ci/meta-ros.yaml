@@ -23,18 +23,17 @@
       - ansicolor:
           colormap: xterm
 
-
 - builder:
-    name: yocto-docker-builder-meta-ros
+    name: yocto-docker-builder-meta-ros-on-master-branches
     builders:
         - shell:
-            !include-raw yocto-docker-meta-ros.sh
+            !include-raw yocto-docker-meta-ros-on-master-branches.sh
 
 - builder:
-    name: yocto-docker-builder-meta-ros-exp
+    name: yocto-docker-builder-meta-ros-on-fido-branches
     builders:
         - shell:
-            !include-raw yocto-docker-meta-ros-exp.sh
+            !include-raw yocto-docker-meta-ros-on-fido-branches.sh
 
 - publisher:
     name: publisher-yocto
@@ -56,34 +55,25 @@
               echo "Unmounting ramdisk"
               sudo umount meta-ros-build/tmp
 
-- publisher:
-    name: publisher-nightly
-    publishers:
-      - archive:
-          artifacts: 'meta-ros-build/deploy/images/*/*image*.tar.bz2,meta-ros-build/deploy/sdk/*'
-          latest-only: true
-          allow-empty: false
-      - email:
-          recipients: lukas.bulwahn@oss.bmw-carit.de
-
 - job-template:
-    name: ROS_{name}_nightly
+    name: ROS_{name}-on-fido-branches_nightly
     defaults: 'ROS_defaults'
-    description: "meta-ros nightly build.\nContact: Lukas Bulwahn"
+    description: "meta-ros on fido branches nightly build.\nContact: Lukas Bulwahn"
     builders:
-        - yocto-docker-builder-meta-ros
+        - yocto-docker-builder-meta-ros-on-fido-branches
     triggers:
         - timed: 'H 19 * * *'
     publishers:
       - publisher-yocto
-      - publisher-nightly
+      - email:
+          recipients: lukas.bulwahn@oss.bmw-carit.de
 
 - job-template:
-    name: ROS_{name}_nightly-experimental
+    name: ROS_{name}-on-master-branches_nightly
     defaults: 'ROS_defaults'
-    description: "meta-ros nightly build (experimental).\nContact: Lukas Bulwahn"
+    description: "meta-ros on master branches nightly build.\nContact: Lukas Bulwahn"
     builders:
-      - yocto-docker-builder-meta-ros-exp
+      - yocto-docker-builder-meta-ros-on-master-branches
     triggers:
       - timed: 'H 03 * * *'
     publishers:
@@ -94,5 +84,5 @@
 - project:
     name: meta-ros
     jobs:
-      - ROS_{name}_nightly
-      - ROS_{name}_nightly-experimental
+      - ROS_{name}-on-fido-branches_nightly
+      - ROS_{name}-on-master-branches_nightly
