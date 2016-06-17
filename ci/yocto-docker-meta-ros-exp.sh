@@ -18,6 +18,10 @@ echo 'BBLAYERS += "/data/src/meta-openembedded/meta-python"' >> $BBLAYERS
 echo 'BBLAYERS += "/data/src/meta-openembedded/meta-multimedia"' >> $BBLAYERS
 echo 'BBLAYERS += "/data/src/meta-ros"' >> $BBLAYERS
 
+# Create subversion servers file to make svn use the given http proxy
+SUBVERSION_SERVERS=$WORKSPACE/meta-ros-src/subversion_servers
+python $WORKSPACE/meta-ros-src/meta-ros/ci/prepare-svn-proxy-settings.py $SUBVERSION_SERVERS
+
 DOCKER_IMAGE=$DOCKER_REGISTRY/bmwcarit/yocto-build:latest
 
 docker pull $DOCKER_IMAGE
@@ -29,6 +33,7 @@ docker run \
     -v $WORKSPACE/meta-ros-src:/data/src \
     -v $BBLAYERS:/data/custom-layers.conf \
     -v ~/.ssh:/home/hsp-dev/.ssh \
+    -v $SUBVERSION_SERVERS:/home/hsp-dev/.subversion/servers \
     -v /var/run/icecc:/var/run/icecc \
     -v /var/cache/icecream:/var/cache/icecream \
     -e DEV_UID=$(id -u) \
