@@ -7,7 +7,7 @@ ln -s $WORKSPACE/meta-ros-src/openembedded-core/build/downloads meta-ros-downloa
 ln -s $WORKSPACE/meta-ros-src/openembedded-core/build/sstate-cache meta-ros-sstate
 ln -s $WORKSPACE/meta-ros-src/openembedded-core/build/tmp-glibc meta-ros-build
 
-git clone https://github.com/bmwcarit/meta-ros.git $WORKSPACE/meta-ros-src/meta-ros
+git clone https://github.com/bulwahn/meta-ros.git -b ci $WORKSPACE/meta-ros-src/meta-ros
 git clone http://git.openembedded.org/openembedded-core $WORKSPACE/meta-ros-src/openembedded-core
 git clone http://git.openembedded.org/meta-openembedded $WORKSPACE/meta-ros-src/meta-openembedded
 git clone http://git.openembedded.org/bitbake/ $WORKSPACE/meta-ros-src/openembedded-core/bitbake
