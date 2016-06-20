@@ -150,7 +150,6 @@ RDEPENDS_${PN} = "\
     move-base \
     robot-pose-ekf \
     roslint \
-    ros-pocketsphinx \
     rt-tests-support \
     communication-tests \
     cyclic-timer-tests \
@@ -174,6 +173,7 @@ RDEPENDS_${PN} = "\
     rosbridge-suite \
     "
 
+# ros-pocketsphinx requires sphinxbase, which currently does not compile (issue #400)
 # ar-track-alvar does not compile due to unknown opencv identifiers.
 # image-view requires gtk+, but it cannot be found by cmake for some reason.
 # sound-play requires python-gst (which is not available in any layers' master branch)
