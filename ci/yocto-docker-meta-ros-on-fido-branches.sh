@@ -46,4 +46,4 @@ docker run \
            cat /data/custom-layers.conf >> /data/src/openembedded-core/build/conf/bblayers.conf && \
            echo -e "INHERIT += \"rm_work\"" >> /data/src/openembedded-core/build/conf/local.conf && \
            echo -e "FETCHCMD_wget = \"/usr/bin/env wget -t 2 -T 360 -nv --passive-ftp --no-check-certificate\"" >> /data/src/openembedded-core/build/conf/local.conf && \
-           bitbake core-image-ros-roscore'
+           bitbake core-image-ros-world -k'
