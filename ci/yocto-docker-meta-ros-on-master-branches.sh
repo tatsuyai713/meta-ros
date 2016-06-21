@@ -49,4 +49,5 @@ docker run \
            echo -e "LICENSE_FLAGS_WHITELIST = \"commercial\"" >> /data/src/openembedded-core/build/conf/local.conf && \
            echo -e "DISTRO_FEATURES = \"opengl\"" >> /data/src/openembedded-core/build/conf/local.conf && \
            echo -e "GIT_PROXY_COMMAND ?= \"/data/src/openembedded-core/scripts/oe-git-proxy\"" >> /data/src/openembedded-core/build/conf/local.conf && \
+           echo -e "GCCVERSION = \"5.3%\"" >> /data/src/openembedded-core/build/conf/local.conf && \
            bitbake core-image-ros-world -k'
