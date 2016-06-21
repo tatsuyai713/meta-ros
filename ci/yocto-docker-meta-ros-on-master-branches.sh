@@ -48,4 +48,5 @@ docker run \
            echo -e "FETCHCMD_wget = \"/usr/bin/env wget -t 2 -T 360 -nv --passive-ftp --no-check-certificate\"" >> /data/src/openembedded-core/build/conf/local.conf && \
            echo -e "LICENSE_FLAGS_WHITELIST = \"commercial\"" >> /data/src/openembedded-core/build/conf/local.conf && \
            echo -e "DISTRO_FEATURES = \"opengl\"" >> /data/src/openembedded-core/build/conf/local.conf && \
-           bitbake core-image-ros-world'
+           echo -e "GIT_PROXY_COMMAND ?= \"/data/src/openembedded-core/scripts/oe-git-proxy\"" >> /data/src/openembedded-core/build/conf/local.conf && \
+           bitbake core-image-ros-world -k'
