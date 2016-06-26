@@ -12,6 +12,10 @@ git clone http://git.openembedded.org/openembedded-core -b fido $WORKSPACE/meta-
 git clone http://git.openembedded.org/meta-openembedded -b fido $WORKSPACE/meta-ros-src/meta-openembedded
 git clone http://git.openembedded.org/bitbake/ -b 1.26 $WORKSPACE/meta-ros-src/openembedded-core/bitbake
 
+# adjust meta-ros for fido
+rm  $WORKSPACE/meta-ros-src/meta-ros/recipes-support/opencv/opencv_3.1.bbappend
+
+# Add needed layers
 echo 'BBLAYERS += "/data/src/openembedded-core/meta"' >> $BBLAYERS
 echo 'BBLAYERS += "/data/src/meta-openembedded/meta-oe"' >> $BBLAYERS
 echo 'BBLAYERS += "/data/src/meta-openembedded/meta-python"' >> $BBLAYERS
@@ -45,5 +49,7 @@ docker run \
            source ./oe-init-build-env && \
            cat /data/custom-layers.conf >> /data/src/openembedded-core/build/conf/bblayers.conf && \
            echo -e "INHERIT += \"rm_work\"" >> /data/src/openembedded-core/build/conf/local.conf && \
+           echo -e "LICENSE_FLAGS_WHITELIST = \"commercial\"" >> /data/src/openembedded-core/build/conf/local.conf && \
+           echo -e "GIT_PROXY_COMMAND ?= \"/data/src/openembedded-core/scripts/oe-git-proxy\"" >> /data/src/openembedded-core/build/conf/local.conf && \
            echo -e "FETCHCMD_wget = \"/usr/bin/env wget -t 2 -T 360 -nv --passive-ftp --no-check-certificate\"" >> /data/src/openembedded-core/build/conf/local.conf && \
-           bitbake core-image-ros-world -k'
+           bitbake core-image-ros-roscore -k'
