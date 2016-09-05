@@ -1,6 +1,25 @@
-This is a layer to provide ROS Indigo Igloo in an OpenEmbedded Linux system.
+This is a layer to provide ROS Kinetic Kame in an OpenEmbedded Linux system.
 It provides a stable cross-compilation build system for many common ROS packages. 
 Currently, this layer is still under continuous development.
+
+This is an experimental local branch for the kinetic distribution at:
+
+    https://github.com/bulwahn/meta-ros/tree/kinetic-experimental
+
+I, Lukas Bulwahn, have tested to build it, and currently, most packages build
+without issues. The packages that fail on kinetic have already failed to build
+(with indigo) on the current master.
+
+Still please remember that this is an experimental local branch:
+
+  - First, do not expect that this branch has been tested with many different build
+    configurations, so possibly, your build configuration could cause build failure
+    we are unaware of.
+  - Second, this branch is work in progress, and hence, the commits of this branch
+    will be rebased and modified, and the git history will change in a non-monotonic
+    way in the future.
+
+Nevertheless, go ahead and try this branch and report issues if you encounter them.
 
 ## IMPORTANT RESOURCES ##
 
