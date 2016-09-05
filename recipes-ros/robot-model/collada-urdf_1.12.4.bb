@@ -8,6 +8,8 @@ DEPENDS = "angles assimp resource-retriever collada-dom collada-parser roscpp ur
 
 require robot-model.inc
 
+SRC_URI += "file://0001-Find-correct-Eigen3.patch;striplevel=2"
+
 do_configure_append() {
     for f in collada_urdf.dir collada_to_urdf.dir urdf_to_collada.dir
     do
