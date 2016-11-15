@@ -15,7 +15,8 @@ DEPENDS = "\
     rosconsole-bridge \
     mavlink \
 "
-RDEPENDS = "\
+
+RDEPENDS_${PN} = "\
     mavlink \
 "
 

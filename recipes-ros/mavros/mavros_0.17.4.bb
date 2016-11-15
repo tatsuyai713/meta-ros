@@ -22,7 +22,8 @@ DEPENDS = "\
     std-srvs \
     tf2-ros \
 "
-RDEPENDS = "\
+
+RDEPENDS_${PN} = "\
     mavlink \
     libmavconn \
     mavlink \
@@ -30,7 +31,7 @@ RDEPENDS = "\
 "
 
 
-LICENCE = "BSD | GPLv3 | LGPLv3"
+LICENSE = "BSD | GPLv3 | LGPLv3"
 
 LIC_FILES_CHKSUM = "file://../LICENSE-BSD.txt;md5=093726b05f1e17a73a6fbef81e1e94d1 \
                     file://../LICENSE-GPLv3.txt;md5=d32239bcb673463ab874e80d47fae504 \
