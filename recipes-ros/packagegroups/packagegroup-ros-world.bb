@@ -37,6 +37,7 @@ RDEPENDS_${PN} = "\
     tf2-msgs \
     tf2-py \
     tf2-ros \
+    tf2-sensor-msgs \
     tf2-tools \
     eigen-conversions \
     kdl-conversions \
@@ -172,6 +173,12 @@ RDEPENDS_${PN} = "\
     rosbridge-server \
     rosbridge-suite \
     ar-track-alvar \
+    ar-track-alvar-msgs \
+    libmavconn \
+    mavros \
+    mavros-extras \
+    mavros-msgs \
+    ros-mavlink \
 "
 
 # collada-parser and collada-urdf require collada-dom, which does not compile with gcc6.
