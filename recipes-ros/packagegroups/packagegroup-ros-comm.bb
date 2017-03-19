@@ -52,4 +52,4 @@ RDEPENDS_${PN} = "\
     rostime \
     gencpp \
     roslz4 \
-    "
+"
