@@ -174,13 +174,10 @@ RDEPENDS_${PN} = "\
     rosbridge-suite \
     ar-track-alvar \
     ar-track-alvar-msgs \
-    libmavconn \
-    mavros \
-    mavros-extras \
     mavros-msgs \
-    ros-mavlink \
 "
 
+# ros-mavlink currently fails: libmavconn mavros mavros-extras depend on it
 # collada-parser and collada-urdf require collada-dom, which does not compile with gcc6.
 # image-view requires gtk+, but it cannot be found by cmake for some reason.
 # sound-play requires python-gst (which is not available in any layers' master branch)
