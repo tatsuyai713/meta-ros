@@ -6,8 +6,8 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=17;endline=17;md5=d566ef916e9de
 DEPENDS = "dynamic-reconfigure nodelet nodelet-topic-tools message-filters tf rosbag pcl pcl-conversions"
 
 SRC_URI = "https://github.com/ros-perception/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "f74e6ce65210062d2c8e2862f9594315"
-SRC_URI[sha256sum] = "8df5fc33acb0bc659753311d49defd2603735f2cd27672e95d4247ef28c6d0f4"
+SRC_URI[md5sum] = "4e3773954d0c3e17c508ba09f4639e44"
+SRC_URI[sha256sum] = "97138ae643ffb9f0c501e0e8b4d10aba9473f7193f6a0bcc4931685b05ab067f"
 
 S = "${WORKDIR}/${ROS_SP}/${ROS_BPN}"
 
