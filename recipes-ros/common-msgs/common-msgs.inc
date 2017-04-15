@@ -1,6 +1,6 @@
 SRC_URI = "https://github.com/ros/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "ca7bbf87061fea2b46963a3a358f2ab5"
-SRC_URI[sha256sum] = "d3fc583d8e2b6733d91bc126069a831e3414550eec2bb20815c19d3e7ce2e96b"
+SRC_URI[md5sum] = "34eb6c289ee93e1f3a67c0865b50e3a4"
+SRC_URI[sha256sum] = "816d96927e7aa6aa4972d5b9dfa3a1c71421cd9c15796d1f5f721ef947ee7fc3"
 
 DEPENDS += "cpp-common roscpp-serialization message-generation message-runtime std-msgs"
 
