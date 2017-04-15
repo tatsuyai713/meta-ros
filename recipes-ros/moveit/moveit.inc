@@ -1,7 +1,8 @@
-SRC_URI = "git://github.com/ros-planning/${ROS_SPN}.git;branch=indigo-devel;protocol=git"
-SRCREV = "901e66c1319a3e7ee0e0879898b8d5fa865563c3"
+SRC_URI = "https://github.com/ros-planning/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
+SRC_URI[md5sum] = "1a4a5b0fc6c747eb69fea7075ba6c9d0"
+SRC_URI[sha256sum] = "c85fdc09453b27aab2bc41205a36123f6a1be84bf7eef5ed79a0b9b88dce009d"
 
-S = "${WORKDIR}/git/${ROS_BPN}"
+S = "${WORKDIR}/${ROS_SP}/${ROS_BPN}"
 
 inherit catkin ros-insane
 
