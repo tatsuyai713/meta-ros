@@ -1,8 +1,6 @@
 SRC_URI = "https://github.com/ros-planning/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "5b6b54e43c0693295a634c4a58cfecc7"
-SRC_URI[sha256sum] = "7396ce129cfc8262dcb748ea722ec83496c530331bb7a950930050813b30ce8c"
-
-SRC_URI += "file://0001-amcl-fix-compilation-with-gcc-v7.patch;patchdir=.."
+SRC_URI[md5sum] = "163eb4065bb8c76ad7e334502383e668"
+SRC_URI[sha256sum] = "b8be76079876ff866bce634caf862f1e2fd8e017d82c207b6aed27ca94cf0f6c"
 
 S = "${WORKDIR}/${ROS_SP}/${ROS_BPN}"
 
