@@ -6,8 +6,8 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=7;endline=7;md5=d566ef916e9dedc
 DEPENDS = "cmake ${PYTHON_PN}-empy-native ${PYTHON_PN}-catkin-pkg-native"
 
 SRC_URI = "https://github.com/ros/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "d58460cc9112812d8c4e6ecf98bbcc85"
-SRC_URI[sha256sum] = "90a639d67db7f9039487af555e432a5b4b6e339f22892d75d03b823b3f38c947"
+SRC_URI[md5sum] = "f958ca71ba921db6855821de2a6df70c"
+SRC_URI[sha256sum] = "468725aadfd6b615cd7d7a75fca37777db987b6ad63f73062c3273bd96d380d6"
 
 SRC_URI += "\
     file://0001-CATKIN_WORKSPACES-Don-t-require-.catkin-file.patch \
