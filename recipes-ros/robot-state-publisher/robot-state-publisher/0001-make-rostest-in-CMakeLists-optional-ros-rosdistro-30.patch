@@ -1,0 +1,38 @@
+From e958839b0fa163727d7b08a04afc3fca39eb5c59 Mon Sep 17 00:00:00 2001
+From: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+Date: Tue, 4 Apr 2017 16:51:02 +0200
+Subject: [PATCH] make rostest in CMakeLists optional (ros/rosdistro#3010)
+
+This commit has the same intentions as commit f3f1c4d55c on the
+indigo branch.
+
+Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+---
+ CMakeLists.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 89dd432..4182289 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -3,7 +3,7 @@ project(robot_state_publisher)
+ 
+ find_package(orocos_kdl REQUIRED)
+ find_package(catkin REQUIRED
+-  COMPONENTS roscpp rosconsole rostime tf tf2_ros tf2_kdl kdl_parser rostest
++  COMPONENTS roscpp rosconsole rostime tf tf2_ros tf2_kdl kdl_parser
+ )
+ find_package(Eigen3 REQUIRED)
+ 
+@@ -38,6 +38,8 @@ target_link_libraries(state_publisher ${PROJECT_NAME}_solver ${orocos_kdl_LIBRAR
+ 
+ if (CATKIN_ENABLE_TESTING)
+ 
++  find_package(rostest REQUIRED)
++
+   add_rostest_gtest(test_one_link ${CMAKE_CURRENT_SOURCE_DIR}/test/test_one_link.launch test/test_one_link.cpp)
+   target_link_libraries(test_one_link ${catkin_LIBRARIES} ${PROJECT_NAME}_solver)
+ 
+-- 
+1.9.1
+
