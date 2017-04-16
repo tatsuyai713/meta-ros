@@ -3,7 +3,7 @@ load all nodelets to convert raw depth/RGB/IR streams to depth images, \
 disparity images, and (registered) point clouds."
 SECTION = "devel"
 LICENSE = "BSD"
-LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=d566ef916e9dedc494f5f793a6690ba5"
+LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 DEPENDS = "image-proc nodelet tf"
 
