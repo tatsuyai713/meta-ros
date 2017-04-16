@@ -1,13 +1,14 @@
 DESCRIPTION = "PCL (Point Cloud Library) ROS interface stack"
 SECTION = "devel"
 LICENSE = "BSD"
-LIC_FILES_CHKSUM = "file://package.xml;beginline=17;endline=17;md5=d566ef916e9dedc494f5f793a6690ba5"
+LIC_FILES_CHKSUM = "file://package.xml;beginline=18;endline=18;md5=d566ef916e9dedc494f5f793a6690ba5"
 
-DEPENDS = "dynamic-reconfigure nodelet nodelet-topic-tools message-filters tf rosbag pcl pcl-conversions"
+DEPENDS = "dynamic-reconfigure libeigen nodelet nodelet-topic-tools message-filters tf rosbag pcl pcl-conversions \
+  pcl-msgs pluginlib rosbag roscpp sensor-msgs std-msgs tf tf2-eigen"
 
 SRC_URI = "https://github.com/ros-perception/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "4e3773954d0c3e17c508ba09f4639e44"
-SRC_URI[sha256sum] = "97138ae643ffb9f0c501e0e8b4d10aba9473f7193f6a0bcc4931685b05ab067f"
+SRC_URI[md5sum] = "d227fde9fd4036f70a8e879d42d6deac"
+SRC_URI[sha256sum] = "7400179978c8314210bb770979246e7583274229044085452a20d6cc22507776"
 
 S = "${WORKDIR}/${ROS_SP}/${ROS_BPN}"
 
