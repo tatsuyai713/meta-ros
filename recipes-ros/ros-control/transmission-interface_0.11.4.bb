@@ -1,7 +1,7 @@
 DESCRIPTION = "Transmission Interface."
 SECTION = "devel"
 LICENSE = "BSD"
-LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=68b329da9893e34099c7d8ad5cb9c940"
+LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=9fe507396161b9e47d2b1e01c422787a"
 
 DEPENDS = "hardware-interface cmake-modules libtinyxml pluginlib resource-retriever roscpp"
 
