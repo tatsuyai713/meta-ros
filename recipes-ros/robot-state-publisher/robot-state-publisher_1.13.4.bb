@@ -9,7 +9,7 @@ SRC_URI = "https://github.com/ros/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilena
 SRC_URI[md5sum] = "6117c3bbde1a7cb3c9b674b34d30dad2"
 SRC_URI[sha256sum] = "d84b0457a085f23a76b7eb103df5196a70d34623a844e7f380a0301d7f850e27"
 
-SRC_URI += "file://0001-Make-rostest-dependency-conditional-depending-on-CAT.patch"
+SRC_URI += "file://0001-make-rostest-in-CMakeLists-optional-ros-rosdistro-30.patch"
 
 S = "${WORKDIR}/${ROS_SP}"
 
