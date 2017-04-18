@@ -1,6 +1,6 @@
 SRC_URI = "https://github.com/yujinrobot/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "ba0f219da77781b65570d2345dadc967"
-SRC_URI[sha256sum] = "c07c19ca610d720f6b85b36a89506de19aec93a3da0a6b3e5f92e3361b2406b6"
+SRC_URI[md5sum] = "2aa8afbfbc61473a541633afa761fac9"
+SRC_URI[sha256sum] = "a1fe0af70d9b694354058824fdc53055acd77d60519879d10fbd932f88c7dd04"
 
 S = "${WORKDIR}/${ROS_SP}/${ROS_BPN}"
 
