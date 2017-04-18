@@ -1,6 +1,6 @@
 SRC_URI = "https://github.com/stonier/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "bf3ea6895dc6d1a6d783d7662ba25191"
-SRC_URI[sha256sum] = "c06ad89bba440030114953f989c2693e9fcccc6382d554d74574a6c2398c3cbd"
+SRC_URI[md5sum] = "f4c840f4336bda84b201aa820e285b6b"
+SRC_URI[sha256sum] = "8004f61d183369ccbb1daebae86f207e91c0161629d41e6113c1aacc8cee332d"
 
 S = "${WORKDIR}/${ROS_SP}/${ROS_BPN}"
 
