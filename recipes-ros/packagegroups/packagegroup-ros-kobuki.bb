@@ -109,5 +109,6 @@ RDEPENDS_${PN} = "\
     kobuki-random-walker \
     kobuki-rapps \
     kobuki-safety-controller \
-    kobuki-testsuite \
 "
+
+# kobuki-testsuite depends on python-orocos-kdl; python-orocos-kdl fails with #469.
