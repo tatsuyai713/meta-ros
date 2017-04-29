@@ -10,6 +10,6 @@ S = "${WORKDIR}/future-0.15.2"
 
 PYPI_PACKAGE_HASH = "99abde815842bc6e97d5a7806ad51236630da14ca2f3b1fce94c0bb94d3d"
 
-inherit setuptools
+inherit setuptools3
 
 BBCLASSEXTEND = "native"
