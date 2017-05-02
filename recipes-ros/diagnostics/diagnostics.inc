@@ -2,8 +2,6 @@ SRC_URI = "https://github.com/ros/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilena
 SRC_URI[md5sum] = "9659e0b3e37108a78f3353ce55cee98e"
 SRC_URI[sha256sum] = "9cd6f439e55195b482b9702369514dde25865a256f3059eb7f475da7ddd483d6"
 
-SRC_URI += "file://0001-make-rostest-in-CMakeLists-optional-ros-rosdistro-30.patch;patchdir=.."
-
 S = "${WORKDIR}/${ROS_SP}/${ROS_BPN}"
 
 inherit catkin
