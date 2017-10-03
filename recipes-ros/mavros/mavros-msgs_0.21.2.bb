@@ -6,6 +6,7 @@ DEPENDS = " \
     message-generation \
     std-msgs \
     geometry-msgs \
+    sensor-msgs \
 "
 
 RDEPENDS_${PN} = " \
