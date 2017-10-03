@@ -5,4 +5,4 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=061abe8dc89f3
 
 DEPENDS = "ar-track-alvar-msgs cmake-modules cv-bridge image-transport libtinyxml pcl-ros resource-retriever roscpp tf visualization-msgs"
 
-include ar-track-alvar.inc
+require ar-track-alvar.inc

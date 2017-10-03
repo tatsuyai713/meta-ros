@@ -5,4 +5,4 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=d566ef916e9de
 
 DEPENDS = "message-generation geometry-msgs std-msgs"
 
-include ar-track-alvar.inc
+require ar-track-alvar.inc
