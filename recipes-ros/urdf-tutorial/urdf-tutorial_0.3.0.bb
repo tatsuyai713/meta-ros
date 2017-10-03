@@ -9,8 +9,6 @@ SRC_URI = "https://github.com/ros/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilena
 SRC_URI[md5sum] = "b8be1589ce7779f43f8de30cee725c52"
 SRC_URI[sha256sum] = "c54a8967ff9fdab1fd3a8cd42994e874b0d332e186338e78381317ebae118b92"
 
-SRC_URI += "file://0001-also-build-with-CATKIN_ENABLE_TESTING-OFF.patch"
-
-S = "${WORKDIR}/${ROS_SP}"
+S = "${WORKDIR}/${ROS_SP}/${ROS_SPN}"
 
 inherit catkin
