@@ -1,6 +1,6 @@
 SRC_URI = "https://github.com/mavlink/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "88a94aeeeda9bc8f7e5b1997071464ac"
-SRC_URI[sha256sum] = "92e086072ac0641143b59d1dbda7ab54e5903d55001eaeceb34432efe3b07dcc"
+SRC_URI[md5sum] = "df3198f7c1a1fcf4f6f0eb2bea4cd450"
+SRC_URI[sha256sum] = "a1757a0f1153d2587d87b50e482b3d1ef6e33bfeda046d43e104a1ef795908ad"
 
 S = "${WORKDIR}/${ROS_SP}/${ROS_BPN}"
 
