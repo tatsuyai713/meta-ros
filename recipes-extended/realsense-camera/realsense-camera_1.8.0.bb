@@ -2,7 +2,7 @@ DESCRIPTION = "ROS driver for RealSense camera"
 LICENSE = "BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=4bcd5f0e140091c68f8c0bcfdd6181e0"
 
-DEPENDS = "librealsense cv-bridge camera-info-manager pcl-ros roscpp"
+DEPENDS = "librealsense2 cv-bridge camera-info-manager pcl-ros roscpp"
 RDEPENDS_${PN} = "rgbd-launch"
 
 SRC_URI = "https://github.com/intel-ros/realsense/archive/${PV}.tar.gz \

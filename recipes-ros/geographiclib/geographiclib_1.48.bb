@@ -3,6 +3,13 @@ SECTION = "devel"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=beda1cf298e14fa7de56a07a83308905" 
 
+
+FILES_${PN} += "/usr/share/matlab/"
+FILES_${PN} += "/usr/share/matlab/geographiclib"
+FILES_${PN} += "/usr/lib/node_modules"
+FILES_${PN} += "/usr/lib/python"
+
+
 DEPENDS = ""
 
 SRC_URI = "${SOURCEFORGE_MIRROR}/${BPN}/distrib/GeographicLib-${PV}.tar.gz"

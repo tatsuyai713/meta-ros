@@ -41,3 +41,6 @@ speechtools_sysroot_preprocess() {
 }
 
 RDEPENDS_${PN} += "perl"
+
+INSANE_SKIP_${PN} = "ldflags"
+INSANE_SKIP_${PN}-dev = "ldflags"
