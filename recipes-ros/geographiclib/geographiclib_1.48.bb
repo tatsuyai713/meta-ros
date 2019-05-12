@@ -8,6 +8,8 @@ FILES_${PN} += "/usr/share/matlab/"
 FILES_${PN} += "/usr/share/matlab/geographiclib"
 FILES_${PN} += "/usr/lib/node_modules"
 FILES_${PN} += "/usr/lib/python"
+FILES_${PN} += "/usr/lib/cmake"
+FILES_${PN} += "/usr/lib/python/GeographicLib"
 
 
 DEPENDS = ""

@@ -1,0 +1,20 @@
+--- speech_tools/siod/siod.cc	2019-05-11 17:06:17.685491462 +0900
++++ speech_tools/siod/siod.cc	2019-05-11 17:05:07.327928180 +0900
+@@ -471,7 +471,7 @@
+     matches = walloc(char *,siod_llength(lmatches)+1);
+     for (l=lmatches,i=0; l; l=cdr(l),i++)
+ 	matches[i] = wstrdup(PNAME(car(l)));
+-    matches[i] = '\0';
++    matches[i] = 0;//'\0';
+ 
+     return matches;
+ }
+@@ -510,7 +510,7 @@
+     matches = walloc(char *,siod_llength(lmatches)+1);
+     for (l=lmatches,i=0; l; l=cdr(l),i++)
+ 	matches[i] = wstrdup(PNAME(car(l)));
+-    matches[i] = '\0';
++    matches[i] = 0;//'\0';
+ 
+     return matches;
+ }

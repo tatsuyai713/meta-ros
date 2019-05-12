@@ -1,0 +1,11 @@
+--- speech_tools/siod/siodeditline.c	2019-05-11 17:08:26.638507046 +0900
++++ speech_tools/siod/siodeditline.c	2019-05-11 17:08:11.610833300 +0900
+@@ -151,7 +151,7 @@
+     symbol = el_current_sym();
+     infostring = siod_manual_sym(symbol);
+     putc('\n',stderr);
+-    fprintf(stderr,infostring);
++    fprintf(stderr,"%s",infostring);
+     fflush(stderr);
+     putc('\n',stderr);
+     fflush(stderr);

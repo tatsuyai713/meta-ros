@@ -8,6 +8,9 @@ SRC_URI = "http://tts.speech.cs.cmu.edu/awb/20130703/speech_tools-${PV}-current.
 SRC_URI[md5sum] = "02863b3ead04a0ade65982a1f34a60bb"
 SRC_URI[sha256sum] = "75e203402483b78de635943671aaf6f86cb6f9bf181fc84a931c2a560ade6a7c"
 
+SRC_URI += "file://patch_1.patch"
+SRC_URI += "file://patch_2.patch"
+SRC_URI += "file://patch_3.patch"
 S = "${WORKDIR}/speech_tools"
 
 inherit autotools-brokensep
@@ -44,3 +47,5 @@ RDEPENDS_${PN} += "perl"
 
 INSANE_SKIP_${PN} = "ldflags"
 INSANE_SKIP_${PN}-dev = "ldflags"
+
+

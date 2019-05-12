@@ -8,3 +8,4 @@ DEPENDS = "boost camera-calibration-parsers cv-bridge dynamic-reconfigure \
   sensor-msgs ${PYTHON_PN}-rospkg"
 
 require image-pipeline.inc
+
